@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Manjaha</string>
+    <string name="title_home">Home</string>
+    <string name="title_pengumuman">Pengumuman</string>
+    <string name="title_judul_beranda1">Baru Diupload</string>
+    <string name="title_kategori">Kategori</string>
+    <string name="title_keranjang">Keranjang</string>
+    <string name="title_akun">Akun</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="search_hint">Cari Judul Buku</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
