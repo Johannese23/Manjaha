@@ -8,24 +8,44 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.manjaha.R
+import com.example.manjaha.adapter.ListBukuAdapter
+import com.example.manjaha.model.Buku
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
-
+    private lateinit var rvBuku: RecyclerView
+    private var list: ArrayList<Buku> = arrayListOf()
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
+//        homeViewModel =
+//                ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-//        val textView: TextView = root.findViewById(R.id.text_home)
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+
+////        val textView: TextView = root.findViewById(R.id.text_home)
+////        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+////            textView.text = it
+////        })
+        rvBuku = root.findViewById(R.id.baru_upload_home)
+        rvBuku.setHasFixedSize(true)
+        list.add( Buku(11,"NORA BARRET |THE KING OF .....",15000,"JAKARTA UTARA",R.drawable.b1))
+        list.add( Buku(11,"THE HYPOCRITE WORLD",40000,"SUMATERA UTARA",R.drawable.b2))
+        list.add( Buku(12,"PROMISE",35000,"SUMATERA UTARA",R.drawable.b3))
+        list.add( Buku(13,"MORE MIRACLE THAN ....",35000,"SUMATERA UTARA",R.drawable.b4))
+
+
+        showRecyclerList()
         return root
+    }
+    private fun showRecyclerList() {
+        rvBuku.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL, false)
+        val listBukuAdapter = ListBukuAdapter(list)
+        rvBuku.adapter = listBukuAdapter
     }
 }
