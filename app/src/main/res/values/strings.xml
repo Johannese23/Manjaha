@@ -15,4 +15,17 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profil_saya">Profil Saya</string>
+    <string name="akun">Akun</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="alamat">Alamat</string>
+    <string name="toko">Toko</string>
+    <string name="mulai_jual">Mulai Jual</string>
+    <string name="toko_saya">Toko Saya</string>
+    <string name="pengumuman">Pengumuman</string>
+    <string name="buat_pengumuman">Buat Pengumuman</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="tentang">Tentang</string>
+    <string name="logout">Logout</string>
 </resources>
