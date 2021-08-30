@@ -28,4 +28,15 @@
     <string name="lainnya">Lainnya</string>
     <string name="tentang">Tentang</string>
     <string name="logout">Logout</string>
+    <string name="masuk">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="sudah_memiliki_akun">Sudah Memiliki Akun? </string>
+    <string name="masuk_sekarang">Masuk Sekarang</string>
+    <string name="daftar_sekarang">Masuk Sekarang</string>
+    <string name="daftar">Daftar</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="kebijakan_privasi">Saya menyetujui Kebijakan Privasi serta Syarat Dan Ketentuan oleh Manjaha</string>
+
 </resources>
