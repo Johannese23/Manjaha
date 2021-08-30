@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:text="@string/title_kategori2"
             android:textAlignment="center"
+            android:fontFamily="@font/poppins"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
