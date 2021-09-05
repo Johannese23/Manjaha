@@ -11,16 +11,16 @@
         android:theme="@style/Theme.Manjaha.NoActionBar">
         <activity android:name=".auth.LoginActivity"></activity>
         <activity android:name=".auth.RegisterActivity">
+
+        </activity>
+        <activity
+            android:name=".ui.spashscreen.SplashScreen"
+            android:theme="@style/Theme.Manjaha.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".ui.spashscreen.SplashScreen"
-            android:theme="@style/Theme.Manjaha.Splash">
-
         </activity>
         <activity
             android:name=".MainActivity"
