@@ -5,41 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#150922"
-    android:gravity="center"
-    android:padding="40dp"
+    android:gravity="center_horizontal"
     tools:context=".auth.LoginActivity">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo_new"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_1"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="20dp"
         android:layout_below="@+id/logo"
+        android:layout_marginStart="10dp"
+        android:elevation="20dp"
+        app:cardElevation="5dp"
+        android:layout_marginEnd="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:background="@color/white">
             <TextView
                 android:id="@+id/tv_masuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/masuk"
-                android:fontFamily="@font/poppins"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginTop="10dp"
                 android:textColor="#7C3384"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:gravity="center"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_email"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_margin="10dp"
                 android:layout_below="@id/tv_masuk"
@@ -58,9 +65,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/et_katasandi"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:layout_below="@id/et_email"
                 android:layout_margin="10dp"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:endIconMode="password_toggle"
                 android:minWidth="@dimen/custom_min_width"
@@ -78,16 +86,18 @@
                 android:id="@+id/tv_lupasandi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lupa_kata_sandi"
                 android:layout_below="@+id/et_katasandi"
+                android:text="@string/lupa_kata_sandi"
                 android:textAlignment="viewEnd"
-                android:layout_margin="10dp"
-                android:textColor="#7C3384"/>
+                android:textColor="#7C3384"
+                android:textSize="17sp" />
+
             <Button
                 android:id="@+id/btn_masuk"
                 android:layout_width="180dp"
                 android:layout_height="55dp"
                 android:text="@string/masuk"
+                android:layout_marginTop="10dp"
                 android:layout_centerInParent="true"
                 android:layout_below="@+id/tv_lupasandi"
                 android:layout_marginBottom="10dp"/>

@@ -1,5 +1,6 @@
 package com.example.manjaha.ui.kategori
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,13 +15,20 @@ import com.example.manjaha.R
 import com.example.manjaha.adapter.ListBukuAdapter
 import com.example.manjaha.adapter.ListKategoriAdapter
 import com.example.manjaha.model.Buku
+import com.example.manjaha.model.GetBuku
+import com.example.manjaha.model.GetKategori
 import com.example.manjaha.model.Kategori
+import com.example.manjaha.retrofit.BukuService
+import com.example.manjaha.retrofit.ManjahaConfig
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class KategoriFragment : Fragment() {
 
     private lateinit var kategoriViewModel: KategoriViewModel
     private lateinit var rvKategori : RecyclerView
-    private var list: ArrayList<Kategori> = arrayListOf()
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -32,24 +40,25 @@ class KategoriFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_kategori, container, false)
         rvKategori = root.findViewById(R.id.rvKategori)
         rvKategori.setHasFixedSize(true)
-        list.add(Kategori(1,"Majalah"))
-        list.add(Kategori(1,"Kamus"))
-        list.add(Kategori(1,"Pendidikan"))
-        list.add(Kategori(1,"Teknik"))
-        list.add(Kategori(1,"Bisnis"))
-        list.add(Kategori(1,"Manajemen"))
-        list.add(Kategori(1,"Komputer dan Teknologi"))
-        list.add(Kategori(1,"Pertanian"))
-        list.add(Kategori(1,"Hukum"))
-        list.add(Kategori(1,"Sejarah"))
-        list.add(Kategori(1,"Ensiklopedia"))
 
+        val request = ManjahaConfig.buildService(BukuService::class.java)
+        request.getKategori().enqueue(object : Callback<GetKategori> {
+            override fun onResponse(call: Call<GetKategori>, response: Response<GetKategori>) {
+                showRecyclerList(response.body()!!.kategori)
+            }
 
+            override fun onFailure(call: Call<GetKategori>, t: Throwable) {
+                    MaterialAlertDialogBuilder(context!!)
+                        .setTitle("Gagal Menyambungkan ke Server").setMessage("${t.message}").setPositiveButton("Ok"){dialog, which ->
 
-        showRecyclerList()
+                        }.show()
+            }
+
+        }
+        )
         return root
     }
-    private fun showRecyclerList() {
+    private fun showRecyclerList(list : ArrayList<Kategori>) {
         rvKategori.layoutManager = LinearLayoutManager(this.context)
         val listKategoriAdapter = ListKategoriAdapter(list)
         rvKategori.adapter = listKategoriAdapter

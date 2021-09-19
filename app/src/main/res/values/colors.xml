@@ -13,6 +13,8 @@
     <color name="purple_font">#9D66A3</color>
     <color name="divider">#C4C4C4</color>
     <color name="purple_category_home">#C3B6D5</color>
+    <color name="button">#00C9A5</color>
+    <color name="shimmer_placeholder">#dddddd</color>
 
 
 </resources>

@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
-    tools:context=".ui.keranjang.KeranjangFragment">
+    tools:context=".ui.buku.AllBookActivity">
 
-    <LinearLayout
-        android:id="@+id/relativeLayout5"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/header_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_container_baru"
-        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_keranjang2"
             android:fontFamily="@font/poppins"
-
-            android:textAlignment="center"
+            android:text="@string/title_kategori2"
             android:textColor="@color/white"
             android:textSize="18sp" />
-
-    </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvKeranjang"
+        android:id="@+id/rvBukus"
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/item_keranjang"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout5" />
-
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
+        app:layout_constraintVertical_bias="0.0"
+        app:spanCount="3"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_buku" />
 </androidx.constraintlayout.widget.ConstraintLayout>
